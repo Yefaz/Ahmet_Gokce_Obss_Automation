@@ -21,19 +21,6 @@ public class MainPageSteps {
 
 
 
-
-        //*[text()='TestAutomation 1001']
-
-        //*[@class='visible menu transition']//*[text()='Group Assignment']
-
-        //*[@name='assignmentType']
-       // (//*[@class='unstackable two fields']//*[@type='text'])[1]
-
-       //    (//*[@name='radioGroup'])[4]
-        //*[contains(text(),'20')]
-        //*[@class='ql-editor']
-       // (//*[@class='ui right floated image src-scenes-session-pages-test-SessionTest__icon'])[2]
-       // mainPage.clickCookieButton();
     }
     @When("Sessions_tanımlama")
     public void sessions_tanımlama() {
@@ -54,47 +41,65 @@ public class MainPageSteps {
     @Then("Sessions atanması")
     public void sessionssAtanması() {
         mainPage.clickButton("//*[@class='ui modal transition visible active']//button[text()='Assign Session']");
+
     }
-    @Given("Search Ikonuna Tıklanır.")
+    @Given("Test Kullanıcısı girisi.")
     public void clickSearch(){
-        mainPage.sendKeys("//*[@name='username']","AT_12440");
-        mainPage.sendKeys("//*[@name='password']","AT_12440");
+        mainPage.sendKeys("//*[@name='username']","AT_12445");
+        mainPage.sendKeys("//*[@name='password']","AT_12445");
         mainPage.clickButton("//*[text()='LOG IN']");
+        utilities.waitFor(3);
         mainPage.clickButton("//*[text()='Skip']");
-        utilities.waitFor(5);
+
+
+
+
+
+    }
+    @When("Teste basla.")
+    public void teste_basla() {
+        utilities.waitFor(3);
         mainPage.clickButton("(//*[text()='Ready to Start']//..//..//..//..//*[text()='Start Test'])[1]");
         mainPage.clickButton("//*[text()='Start the Test']");
 
         mainPage.clickButton("//*[text()='Test1']");
-        utilities.waitFor(5);
+        utilities.waitFor(3);
         mainPage.clickButton("//*[@class='ui right floated image src-scenes-session-pages-test-SessionTest__icon']");
 
+        utilities.waitFor(3);
+        sorular.SoruCevapla(mainPage.SoruBaslik());
+        utilities.waitFor(3);
+        //    mainPage.sendKeys("//*[@class='ql-editor ql-blank']","Deneme");
+        utilities.waitFor(3);
+        mainPage.clickButton("(//*[@class='ui right floated image src-scenes-session-pages-test-SessionTest__icon'])[2]");
+        utilities.waitFor(3);
+
 
         sorular.SoruCevapla(mainPage.SoruBaslik());
-    //    mainPage.sendKeys("//*[@class='ql-editor ql-blank']","Deneme");
+        utilities.waitFor(10);
+
+        //   mainPage.clickButton("(//div[@class='ui radio checkbox src-common-components-Questions-Questions__listItem'])[3]");
         utilities.waitFor(5);
         mainPage.clickButton("(//*[@class='ui right floated image src-scenes-session-pages-test-SessionTest__icon'])[2]");
+        utilities.waitFor(3);
+        utilities.waitFor(3);
+        mainPage.dragAndDropa("//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[1]/div/span[1]/div", "//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[2]/span[2]/span");
+        utilities.waitFor(3);
+        mainPage.dragAndDropa("//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[1]/div/span[1]/div", "//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[2]/span[4]/span");
+        utilities.waitFor(2);
+        mainPage.dragAndDropa("//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[1]/div/span[1]/div", "//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[2]/span[6]/span");
+        utilities.waitFor(2);
+        mainPage.dragAndDropa("//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[1]/div/span[1]/div", "//*[@id=\"root\"]/div[1]/div/div[3]/div/div[2]/div[3]/div[1]/div[2]/span[8]/span");
 
-
-
-        sorular.SoruCevapla(mainPage.SoruBaslik());
-
-     //   mainPage.clickButton("(//div[@class='ui radio checkbox src-common-components-Questions-Questions__listItem'])[3]");
-        utilities.waitFor(5);
-        mainPage.clickButton("(//*[@class='ui right floated image src-scenes-session-pages-test-SessionTest__icon'])[2]");
-
-        utilities.waitFor(5);
-        mainPage.dragAndDrop("(//span[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[1]']", "(//div[@class='ui medium label src-common-components-Questions-DragAndDrop-BlankItem__blankLabel'])[4]");
-        utilities.waitFor(5);
-        mainPage.dragAndDrop("(//span[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[2]']", "(//div[@class='ui medium label src-common-components-Questions-DragAndDrop-BlankItem__blankLabel'])[2]");
-        utilities.waitFor(5);
-        mainPage.dragAndDrop("(//span[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[3]']", "(//div[@class='ui medium label src-common-components-Questions-DragAndDrop-BlankItem__blankLabel'])[5]");
-        utilities.waitFor(5);
-        mainPage.dragAndDrop("(//span[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[4]']", "(//div[@class='ui medium label src-common-components-Questions-DragAndDrop-BlankItem__blankLabel'])[1]");
-        utilities.waitFor(5);
+        ;
+    }
+    @Then("Testi bitir.")
+    public void testi_bitir() {
 
         mainPage.clickButton("//*[@class='ui primary button src-scenes-session-pages-test-SessionTest__finishTestButton src-common-components-AssesmentButton-AssesmentButton__button']");
-
+        utilities.waitFor(3);
+        mainPage.clickButton("//*[text()='Finish Test']");
+        utilities.waitFor(5);
 
     }
 

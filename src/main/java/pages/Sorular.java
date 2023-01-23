@@ -21,13 +21,14 @@ MainPage mainPage=new MainPage();
         else if(SoruBasligi.equals("Test nedir?"))
         { mainPage.sendKeys("//*[@class='ql-editor ql-blank']","Deneme");}
         else if(SoruBasligi.equals("Drop the correct answer by dragging the options into the 4 space below.")) {
-            mainPage.dragAndDrop("(//span[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[1]']", "(//div[@class='ui medium label src-common-components-Questions-DragAndDrop-BlankItem__blankLabel'])[4]");
-            utilities.waitFor(5);
-            mainPage.dragAndDrop("//*[text()='Test2']", "(//*[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[2]");
-            utilities.waitFor(5);
-            mainPage.dragAndDrop("//*[text()='Test3']", "(//*[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[3]");
-            utilities.waitFor(5);
-            mainPage.dragAndDrop("//*[text()='Test4']", "(//*[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[4]");
+            utilities.waitFor(3);
+            mainPage.dragAndDropa("(//span[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[1]']", "(//div[@class='ui medium label src-common-components-Questions-DragAndDrop-BlankItem__blankLabel'])[4]");
+            utilities.waitFor(3);
+            mainPage.dragAndDropa("//*[text()='Test2']", "(//*[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[2]");
+            utilities.waitFor(3);
+            mainPage.dragAndDropa("//*[text()='Test3']", "(//*[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[3]");
+            utilities.waitFor(3);
+            mainPage.dragAndDropa("//*[text()='Test4']", "(//*[@class='src-common-components-Questions-DragAndDrop-QuestionPreview__placeholder'])[4]");
             utilities.waitFor(5);
         }
     }

@@ -8,6 +8,8 @@ Feature:Assessment Test
     Then Sessions atanması
     And Wait for 40
 Scenario: Case2
-  Then Search Ikonuna Tıklanır.
-  And Wait for 40
+  Given Test Kullanıcısı girisi.
+  When Teste basla.
+  Then Testi bitir.
+  And Wait for 10
 
