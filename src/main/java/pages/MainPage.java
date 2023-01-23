@@ -1,22 +1,64 @@
 package pages;
 
+import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import utils.Utilities;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
-
+import org.openqa.selenium.interactions.Actions;
 public class MainPage extends Utilities {
+
+public String SoruBaslik(){
+
+    String text=null;
+    By element = By.xpath("//*[@class='ql-editor src-common-components-RichLabel-RichLabel__richLabel false false src-common-components-Questions-Questions__title ']");
+    text=driver.findElement(element).getText();
+
+
+    return text;
+}
+
 
     public void clickCookieButton(){
         By cookieButton = By.id("cookieAcceptance");
         driver.findElement(cookieButton).click();
     }
 
+    public void clickButton(String xpath){
+        By btn = By.xpath(xpath);
+        driver.findElement(btn).click();
+    }
+
+
+    public void sendKeys(String xpath,String text){
+        By btn = By.xpath(xpath);
+        driver.findElement(btn).sendKeys(text);
+    }
+
+    public void dragAndDrop(String xpath1,String xpath2){
+
+        By element1 = By.xpath(xpath1);
+        WebElement from=driver.findElement(element1);
+        By element2 = By.xpath(xpath2);
+        WebElement to=driver.findElement(element2);
+
+
+        //Using Action class for drag and drop.
+        Actions act=new Actions(driver);
+
+        //Dragged and dropped.
+        act.dragAndDrop(from,to).build().perform();
+    }
+
     public void clickSearchButton(){
         By searchButton = By.id("search-icon");
         driver.findElement(searchButton).click();
     }
+
+
     public void writeAutomation(){
         By text = By.id("search-box");
         driver.findElement(text).sendKeys("Automation");

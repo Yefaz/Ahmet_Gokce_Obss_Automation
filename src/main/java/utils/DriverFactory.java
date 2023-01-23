@@ -20,7 +20,7 @@ public class DriverFactory {
 
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("disable-notifications");
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
                 driver = new ChromeDriver(chromeOptions);
 
 
